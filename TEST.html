@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-locale="GB">
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </head>
+    <body id="content">
+    </body>
+</html>
+<script>
+    $(function() {
+        console.log( "ready!" );
+        // 获取当前URL
+    var url = window.location.href;
+
+    var urlParams = new URLSearchParams(window.location.search);
+    var url = urlParams.get('url');
+
+    // 获取查询字符串
+    //var queryString = url.split('?')[1];
+
+    // 将查询字符串分割成数组
+    //var queryParams = queryString.split('&');
+
+    // 将查询字符串参数存储到对象中
+    //var params = {};
+    //for (var i = 0; i < queryParams.length; i++) {
+    //var pair = queryParams[i].split('=');
+    //params[pair[0]] = decodeURIComponent(pair[1]);
+    //}
+    
+    // 使用Ajax调用API
+    $.ajax({
+    url: 'http://3.112.206.105:8081/slide/html',
+    type: 'POST',
+    headers: {
+        'accept': '*/*',
+        'Content-Type': 'application/json'
+    },
+    data: JSON.stringify({
+        httpMethod: 'GET',
+        headers: {
+        additionalProp1: 'string',
+        additionalProp2: 'string',
+        additionalProp3: 'string'
+        },
+        url: url,
+        body: 'string'
+    }),
+    success: function(response) {
+        // 替换HTML内容
+        $('html').html(response.html);
+    },
+    error: function(xhr, textStatus, error) {
+        console.log(xhr.statusText);
+    }
+    });    
+
+    });
+
+    // 监听页面上的所有链接
+    document.addEventListener('click', function(event) {
+    if (event.target.tagName === 'A') {
+        event.preventDefault();
+        // 用户点击了链接，执行相应操作
+        console.log('User clicked a link:', event.target.href);
+
+        // 使用Ajax调用API
+        $.ajax({
+        url: 'http://3.112.206.105:8081/slide/html',
+        type: 'POST',
+        headers: {
+            'accept': '*/*',
+            'Content-Type': 'application/json'
+        },
+        data: JSON.stringify({
+            httpMethod: 'GET',
+            headers: {
+            additionalProp1: 'string',
+            additionalProp2: 'string',
+            additionalProp3: 'string'
+            },
+            url: event.target.href,
+            body: 'string'
+        }),
+        success: function(response) {
+            // 替换HTML内容
+            $('html').html(response);
+        },
+        error: function(xhr, textStatus, error) {
+            console.log(xhr.statusText);
+        }
+        });   
+    }
+    });
+
+    // 监听页面上的所有表单
+    document.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    // 获取表单元素
+    const form = event.srcElement;
+
+    // 获取表单元素的所有 input 元素
+    const inputs = form.querySelectorAll('input');
+
+    // 创建一个对象来存储 input 元素的值
+    const formData = {};
+
+    // 遍历所有 input 元素，将其名称和值存储到 formData 对象中
+    inputs.forEach(function(input) {
+        formData[input.name] = input.value;
+    });
+
+    // 执行其他操作，例如向服务器发送请求等
+    console.log('Form data:', formData);
+});
+    
+</script>

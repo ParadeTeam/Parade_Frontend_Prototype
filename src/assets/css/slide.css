@@ -1,0 +1,109 @@
+.slide {
+    width: 15rem;
+    height: 100vh;
+    position: relative;
+    overflow-y: scroll;
+    /* background-image: linear-gradient(140deg, #b7b9fa 0%, #f0adda 50%, #ea90b1 100%);
+    box-shadow: 0 1.5px 2px rgb(0 0 0 / 25%); */
+}
+
+.action-btn-groups {
+    height: 55px;
+}
+
+.slide .slide-items {
+    height: 100%;
+    padding-left: 0px;
+    margin-left: 8px;
+    padding-right: 3px;
+    padding-bottom: 2px;
+}
+
+.slide .slide-items .slide-item::marker {
+    font-size: 13px;
+}
+
+.slide .slide-items .slide-item > * {
+    vertical-align: text-top;
+}
+
+.slide .slide-items .slide-item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 8px;
+    padding-left: 5px;
+    padding-right: 5px;
+    transition: all .15s;
+}
+
+.slide .slide-items .slide-item:not(:first-of-type) {
+    margin-top: 12px;
+}
+
+.slide .slide-items .slide-item .slide-img {
+    width: 25%;
+    padding: 5px 5px 5px 8px
+}
+
+.slide .slide-items .slide-item img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.slide .slide-items .slide-item .sub-title {
+    width: 75%;
+    display: block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 5px 7px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.slide .btn-add-slide {
+    cursor: pointer;
+    width: 9.375rem;
+    display: flex;
+    justify-content: center;
+    margin-left: 7px;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    position: fixed;
+    bottom: 0px;
+    color: #d86175;
+    background-image: linear-gradient(140deg,#eaced4 0%,#e3dadc 55%,#fcf9f9 100%);
+    transition: all .15s;
+    /* box-shadow: 0px 1px 2px rgb(0 0 0 / 25%); */
+}
+
+.slide .btn-add-slide:hover {
+    word-spacing: 3px;
+    font-size: 17px;
+}
+
+.slide-item.active,
+.slide-item:hover {
+    background-color: aliceblue;
+    box-shadow: 0 0 7px 2px rgb(0 0 0 / 30%);
+    border-radius: 10px;
+    padding-left: 0!important;
+    padding-right: 0!important;
+}
+
+.slide-item.active img {
+    margin-top: -3px;
+}
+
+.paganation{
+    position: fixed;
+    margin-left: 2px;
+    bottom: 2em;
+    left: 11rem;
+    background-color: gainsboro;
+    border-radius: 50px;
+    padding: 2px;
+}

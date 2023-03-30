@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  nginx:
+    # 直接拿 nginx official image 來使用 
+    image: library/nginx:1.19-alpine
+    ports:
+      - 8080:8080
+    volumes:
+      - "./nginx.conf:/etc/nginx/conf.d/default.conf"
+      - "./dist:/var/www/html"
