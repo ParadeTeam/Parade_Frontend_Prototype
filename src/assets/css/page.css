@@ -1,0 +1,66 @@
+.page {
+    position: relative;
+    width: 100%;
+    height: 98vh;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 8px;
+    margin: 7px;
+    padding: 7px 15px;
+    box-shadow: 0px 2px 2px rgb(0 0 0 / 25%);
+}
+
+.page iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.page .paganation{
+    position: fixed;
+    margin-left: 2px;
+    bottom: 2em;
+    left: 12rem;
+    background-color: white;
+    border-radius: 50px;
+    padding: 2px;
+    box-shadow: 0px 2px 3px 1px rgb(0 0 0 / 15%);
+}
+
+.page .paganation i{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.page .toolbox{
+    position: absolute;
+    left: 0;
+    background-color: #cccccc;
+    font-size: x-small;
+    /* border-radius: 50px; */
+    border-bottom-right-radius: 50px;
+    border-top-right-radius: 50px;
+    /* z-index: 1000; */
+    margin-top: 2em;
+    opacity: 80%;    
+}
+
+.page .categorymenu{
+    position: absolute;
+    background-color: #cccccc;
+    font-size: x-small;
+    opacity: 80%;
+    width: 150px;
+    margin-top: 4.5em;
+    border-radius: 8px;
+    margin-left: 2px;
+}
+
+.page .categorymenu hr{
+    margin-top: 0px;
+    margin-bottom: 0.5em;
+}
+
+.page .categorymenu .activeCate{
+    color: indianred;
+}
